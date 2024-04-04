@@ -16,12 +16,12 @@ y_dimension=0.03;%m
 z_dimension=0.019;%m
 
 %Craziflie parameters
-m=0.032;%kg massa (without payload 15g)(25g original)
+m=0.032;%kg mass (without payload 15g) (25g original)
 W=m*g;%N
 fg=W;%gravity force
 Cd=1;%equal to the rectangular shape as represented in the project statement
 Area=diag([y_dimension*z_dimension, x_dimension*z_dimension, y_dimension*x_dimension]);%m^2
-Drag_Body=-Cd*0.5*Area*ro_earth*1.5;%1.5 is the assumed velocity that we believe it can take in the magority of times
+Drag_Body=-Cd*0.5*Area*ro_earth*1.5;%1.5 is the assumed velocity that we believe the rotor can take most times
 %fa=Drag_Body*v;
 
 
@@ -33,9 +33,9 @@ J=[1.395*10^-5 0 0
     0 0 2.173*10^-5];%kg/m^2
 
 %Positions fo the rotors
-pos1=[3.25; -3.25; 1.45]*10^-2;
-pos2=[-3.25; -3.25; 1.45]*10^-2;
-pos3=[-3.25; 3.25; 1.45]*10^-2;
+pos1=[3.25; -3.25; 1.45]*10^-2;%m
+pos2=[-3.25; -3.25; 1.45]*10^-2;%m
+pos3=[-3.25; 3.25; 1.45]*10^-2;%m
 pos4=[3.25; 3.25; 1.45]*10^-2;%m
 
 
