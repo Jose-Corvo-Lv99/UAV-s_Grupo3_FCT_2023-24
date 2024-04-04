@@ -39,13 +39,13 @@ pos3=[-3.25; 3.25; 1.45]*10^-2;%m
 pos4=[3.25; 3.25; 1.45]*10^-2;%m
 
 
-%Time defenition
-Dt=0.01; %s %time interval between each moment/iteration
+%Time definition
+Dt=0.01; %s %time interval between each iteration
 t = 0:Dt:5; %time vector from 0 to 50 seconds with an interval of Dt
 N = length( t ); %total number of iterations/instants or time vector length
 
 %Thrust definition
-Thrust=(m+0.015)*g_earth/4;%N %Max Thrust assumed
+Thrust=(m+0.015)*g_earth/4;%N %Maximum Thrust assumed
 %Thrust=m*g_earth/4;
 T=Thrust*4;
 
@@ -62,7 +62,7 @@ CT=3.1582*10^-10;%N/RPM^2
 cte=CQ/CT;
 np=moment_vector_func([Thrust;Thrust;Thrust;Thrust], Fp1,Fp2,Fp3,Fp4,pos1,pos2,pos3,pos4,cte);
 
-%Propolsion for for each rotor
+%Propulsion for each rotor
 u=[T;np(1);np(2);np(3)]*(t>=0);%We are not using this format for the nonlinear, we are only changing the values of the thrust of each rotor
 %u=[2;2;2;2]*(t>=4); %Changes the input or each rotor thrust by 2N on the 4 seconds
 
